@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pa' Sazonar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+<link rel="stylesheet" href="estilos.css">
+<script src="funciones.js" defer></script>
+
+</head>
+<body>
+
+<!-- SECCIÓN TUTORIAL -->
+  <section class="tutorial-section" id="tutorial-section">
+    <!-- Bola amarilla con iconos -->
+    <div class="bola-amarilla-tutorial">
+      <div class="logo-wrapper">
+        <img src="img/logotipo.png" alt="Logo" class="logo-tutorial">
+        
+        <!-- ÍCONO DE NAVEGACIÓN -->
+        <div class="circle-icon-tutorial home-icon" onclick="location.href='index.html'">
+          <i class="fas fa-home"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tutorial-container">
+      <!-- Botones de nombre y tiempo a la derecha -->
+      <div class="tutorial-header">
+        <div class="botones-tutorial">
+          <select class="btn-nombre-tutorial" id="selector-platillo" onchange="cambiarPlatillo()">
+            <option value="chocolate">Chocolate Colombiano</option>
+            <option value="arroz">Arroz con Pollo</option>
+            <option value="alitas">Alitas BBQ</option>
+          </select>
+          <i class="fas fa-clock reloj-negro"></i>
+          <button class="btn-tiempo" id="tiempo-aprox">TIEMPO APROX: 20 min</button>
+        </div>
+      </div>
+      
+      <!-- Botón TUTORIAL grande -->
+      <button class="btn-tutorial-grande">TUTORIAL</button>
+      
+      <!-- Contenido principal -->
+      <div class="tutorial-content">
+        <!-- Video tutorial HORIZONTAL -->
+        <div class="video-tutorial-horizontal">
+          <iframe width="100%" height="100%" id="tutorial-video" src="https://www.youtube.com/embed/IIqegLsMaMU" title="Tutorial Chocolate Colombiano" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Sección de ingredientes -->
+        <div class="ingredientes-section">
+          <button class="btn-ingredientes amarillo">INGREDIENTES</button>
+          
+          <!-- Carrusel de ingredientes - SOLO UNO VISIBLE -->
+          <div class="carrusel-ingredientes">
+            <div class="carrusel-ingredientes-container" id="ingredientes-container">
+              <!-- Los ingredientes se cargarán dinámicamente -->
+            </div>
+            
+            <!-- Flechas de navegación -->
+            <button class="carrusel-btn-ingredientes carrusel-prev-ingredientes">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carrusel-btn-ingredientes carrusel-next-ingredientes">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <!-- ========== SECCIÓN PASO A PASO ========== -->
+  <section class="paso-a-paso">
+    <div class="container-pasos">
+      <!-- Botón PASO A PASO -->
+      <button class="btn-paso-a-paso">PASO A PASO</button>
+      
+      <!-- Pasos dinámicos -->
+      <div id="pasos-container">
+        <!-- Los pasos se cargarán dinámicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECTÁNGULO CON LOGO Y REDES SOCIALES ===== -->
+<div class="rectangle">
+  <img src="img/logotipo.png" alt="Nuevo Logo" class="logo-rectangle">
+  <div class="social-icons">
+    <a href="https://www.instagram.com/pa.sazonar/?igsh=MXZxemlqYnIzaHFhbA%3D%3D" target="_blank" class="social-link">
+      <i class="fab fa-instagram social-icon"></i>
+    </a>
+    <a href="https://www.tiktok.com/@pa.sazonar?_t=ZS-8zl9Lb9vQBO&_r=1" target="_blank" class="social-link">
+      <i class="fab fa-tiktok social-icon"></i>
+    </a>
+  </div>
+</div>
+
+    <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Pa' sazonar© 2024. Todos los derechos reservados - Política de privacidad</p>
+  </footer>
+
+  </body>
+</html>
+<script>
+
+//
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const platillo = urlParams.get("platillo");
+
+  if (platillo && platillos[platillo]) {
+    loadPlatillo(platillo);
+    loadIngredientes(platillo);
+    loadPasos(platillo);
+  }
+});
+//
+</script>

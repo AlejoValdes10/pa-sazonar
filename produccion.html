@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pa' Sazonar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+<link rel="stylesheet" href="estilos.css">
+<script src="funciones.js" defer></script>
+
+</head>
+<body> 
+ 
+ <!-- ========== NUEVA SECCIÓN: PRODUCCIÓN ========== -->
+  <section class="produccion-section">
+    <!-- Bola amarilla izquierda con logo e icono de casa -->
+    <div class="bola-amarilla-produccion" id="seccion-produccion">
+      <div class="logo-wrapper">
+        <img src="img/logotipo.png" alt="Logo" class="logo-produccion">
+        <!-- Icono de casa -->
+        <div class="circle-icon-produccion home-icon" onclick="location.href='index.html'">
+          <i class="fas fa-home"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="produccion-container">
+      <!-- Botón PROYECTO -->
+      <div class="produccion-header">
+        <button class="btn-proyecto-cafe">PROYECTO</button>
+      </div>
+      
+      <!-- Botón IMAGENES a la derecha -->
+      <div class="produccion-imagenes-btn">
+        <button class="btn-imagenes-rojo">IMAGENES</button>
+      </div>
+      
+      <!-- 3 imágenes centradas -->
+      <div class="tres-imagenes">
+        <img src="img/ajiaco.avif" alt="Chocolate Colombiano">
+        <img src="img/arroz con pollo.avif" alt="Arroz con Pollo">
+        <img src="img/alitas bqq.webp" alt="Alitas BBQ">
+      </div>
+      
+      <!-- Sección PREPRODUCCIÓN MODIFICADA -->
+      <div class="seccion-produccion">
+        <div class="titulo-seccion azul">PREPRODUCCIÓN</div>
+        <div class="contenido-seccion preproduccion-modificada">
+          <div class="imagen-seccion">
+            <!-- Cambiamos imagen por video -->
+            <video controls poster="img/facil.png">
+              <source src="video/preproduccion.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <div class="texto-seccion">
+            <p>En la etapa de preproducción organizamos todos los ingredientes, preparamos el set de grabación y planificamos cada receta. Seleccionamos cuidadosamente cada componente para garantizar la mejor calidad en nuestros tutoriales culinarios.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección PRODUCCIÓN MODIFICADA - Texto a la izquierda, video a la derecha -->
+      <div class="seccion-produccion">
+        <div class="titulo-seccion rojo">PRODUCCIÓN</div>
+        <div class="contenido-seccion produccion-modificada">
+          <div class="texto-seccion">
+            <p>Durante la producción capturamos cada paso del proceso culinario. Nuestro equipo se encarga de grabar con la mejor calidad, asegurando que cada detalle de la preparación sea visible y comprensible para nuestros espectadores.</p>
+          </div>
+          <div class="imagen-seccion">
+            <!-- Cambiamos imagen por video -->
+            <video controls poster="img/frutos.png">
+              <source src="video/produccion.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección POSTPRODUCCIÓN MODIFICADA -->
+      <div class="seccion-produccion">
+        <div class="titulo-seccion amarillo">POSTPRODUCCIÓN</div>
+        <div class="contenido-seccion postproduccion-modificada">
+          <div class="imagen-seccion">
+            <!-- Cambiamos imagen por video -->
+            <video controls poster="img/vrg 1.png">
+              <source src="video/postproduccion.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <div class="texto-seccion">
+            <p>En postproducción editamos y refinamos cada video, agregamos efectos visuales, música de fondo y ajustamos los colores para crear la experiencia perfecta. El resultado final son tutoriales culinarios de calidad profesional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== RECTÁNGULO CON LOGO Y REDES SOCIALES ===== -->
+<div class="rectangle">
+  <img src="img/logotipo.png" alt="Nuevo Logo" class="logo-rectangle">
+  <div class="social-icons">
+    <a href="https://www.instagram.com/pa.sazonar/?igsh=MXZxemlqYnIzaHFhbA%3D%3D" target="_blank" class="social-link">
+      <i class="fab fa-instagram social-icon"></i>
+    </a>
+    <a href="https://www.tiktok.com/@pa.sazonar?_t=ZS-8zl9Lb9vQBO&_r=1" target="_blank" class="social-link">
+      <i class="fab fa-tiktok social-icon"></i>
+    </a>
+  </div>
+</div>
+
+    <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Pa' sazonar© 2024. Todos los derechos reservados - Política de privacidad</p>
+  </footer>
+
+  </body>
+</html>

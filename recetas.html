@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pa' Sazonar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+<link rel="stylesheet" href="estilos.css">
+<script src="funciones.js" defer></script>
+
+</head>
+<body>
+    
+  <!-- ========== SECCIÓN DE RECETAS ========== -->
+  <section class="recetas">
+    <!-- BOLA AMARILLA CON LOGO E ICONOS -->
+    <div class="bola-amarilla-recetas">
+      <div class="logo-wrapper">
+        <img src="img/logotipo.png" alt="Logo" class="logo-recetas">
+        
+        <!-- SOLO EL ÍCONO DE LA CASITA -->
+        <div class="circle-icon-recetas home-icon" onclick="location.href='index.html'">
+          <i class="fas fa-home"></i>
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="titulo-recetas">RECETAS</h2>
+    
+    <!-- CARRUSEL PERSONALIZADO CON 4 SLIDES (1 IMAGEN POR SLIDE) -->
+    <div class="carrusel-wrapper">
+      <div class="carrusel">
+        <div class="carrusel-container">
+          <!-- SLIDE 1 -->
+          <div class="carrusel-slide active">
+            <div class="image-container single-image">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Receta 1" class="carrusel-imagen">
+              <div class="image-overlay">
+                <div class="overlay-title">Chocolate Caliente</div>
+                <div class="overlay-text">Deliciosa bebida colombiana tradicional</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SLIDE 2 -->
+          <div class="carrusel-slide">
+            <div class="image-container single-image">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Receta 2" class="carrusel-imagen">
+              <div class="image-overlay">
+                <div class="overlay-title">Postre Especial</div>
+                <div class="overlay-text">Un dulce manjar para ocasiones especiales</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SLIDE 3 -->
+          <div class="carrusel-slide">
+            <div class="image-container single-image">
+              <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Receta 3" class="carrusel-imagen">
+              <div class="image-overlay">
+                <div class="overlay-title">Ensalada Fresca</div>
+                <div class="overlay-text">Perfecta para días calurosos</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SLIDE 4 -->
+          <div class="carrusel-slide">
+            <div class="image-container single-image">
+              <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Receta destacada" class="carrusel-imagen">
+              <div class="image-overlay">
+                <div class="overlay-title">Plato Especial</div>
+                <div class="overlay-text">La receta destacada de la semana</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- FLECHAS DE NAVEGACIÓN (POSICIONES ABSOLUTAS RESPECTO AL WRAPPER) -->
+        <button class="carrusel-btn carrusel-prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carrusel-btn carrusel-next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATILLOS MODO FÁCIL -->
+  <section class="platillos-dificultad facil-bg">
+    <div class="container">
+      <div class="titulo-con-lineas">
+        <h2 class="titulo-platillos">Platillos modo fácil</h2>
+        <div class="linea-inferior"></div>
+      </div>
+      
+      <div class="contenido-platillo">
+        <div class="video-container-platillo">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/IIqegLsMaMU" title="Chocolate Colombiano" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <div class="info-platillo">
+          <button class="btn-nombre-platillo" id="facil-nombre">Chocolate Colombiano</button>
+          <p class="descripcion-platillo" id="facil-descripcion">Un delicioso chocolate caliente colombiano tradicional, preparado con cacao de la mejor calidad, leche fresca y especias autóctonas. Perfecto para días fríos y momentos especiales en familia.</p>
+          <button class="btn-ver-receta" onclick="location.href='tutorial.html?platillo=chocolate'">Ver receta</button>
+        </div>
+      </div>
+      
+      <!-- CÍRCULO CREMA AMARILLO AL FINAL -->
+      <div class="circulo-final"></div>
+    </div>
+  </section>
+
+  <!-- PLATILLOS MODO MEDIO -->
+  <section class="platillos-dificultad medio-bg">
+    <div class="container">
+      <div class="titulo-con-lineas">
+        <div class="linea-superior"></div>
+        <h2 class="titulo-platillos">Platillos modo medio</h2>
+        <div class="linea-inferior"></div>
+      </div>
+      
+      <div class="contenido-platillo">
+        <div class="video-container-platillo">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/CygdufK8gmE" title="Arroz con Pollo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <div class="info-platillo">
+          <button class="btn-nombre-platillo" id="medio-nombre">Arroz con Pollo</button>
+          <p class="descripcion-platillo" id="medio-descripcion">El famoso arroz con pollo colombiano, un plato tradicional lleno de sabor y color. Preparado con arroz, pollo jugoso, verduras frescas y especias que le dan ese toque único de nuestra gastronomía.</p>
+<button class="btn-ver-receta" onclick="location.href='tutorial.html?platillo=arroz'">Ver receta</button>
+        </div>
+      </div>
+      
+      <!-- CÍRCULO CREMA AMARILLO AL FINAL -->
+      <div class="circulo-final"></div>
+    </div>
+  </section>
+
+  <!-- PLATILLOS MODO DIFÍCIL -->
+  <section class="platillos-dificultad dificil-bg">
+    <div class="container">
+      <div class="titulo-con-lineas">
+        <div class="linea-superior"></div>
+        <h2 class="titulo-platillos">Platillos modo difícil</h2>
+        <div class="linea-inferior"></div>
+      </div>
+      
+      <div class="contenido-platillo">
+        <div class="video-container-platillo">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/3an78mKw1ko" title="Alitas BBQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <div class="info-platillo">
+          <button class="btn-nombre-platillo" id="dificil-nombre">Alitas BBQ</button>
+          <p class="descripcion-platillo" id="dificil-descripcion">Deliciosas alitas de pollo bañadas en salsa BBQ casera, con un equilibrio perfecto entre dulce y picante. Marinadas por horas y cocidas a la perfección para lograr esa textura crujiente por fuera y jugosa por dentro.</p>
+<button class="btn-ver-receta" onclick="location.href='tutorial.html?platillo=alitas'">Ver receta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECTÁNGULO CON LOGO Y REDES SOCIALES ===== -->
+  <div class="rectangle">
+    <img src="img/logotipo.png" alt="Nuevo Logo" class="logo-rectangle">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/pa.sazonar/?igsh=MXZxemlqYnIzaHFhbA%3D%3D" target="_blank" class="social-link">
+        <i class="fab fa-instagram social-icon"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pa.sazonar?_t=ZS-8zl9Lb9vQBO&_r=1" target="_blank" class="social-link">
+        <i class="fab fa-tiktok social-icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Pa' sazonar© 2024. Todos los derechos reservados - Política de privacidad</p>
+  </footer>
+  </body>
+</html>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+
+//
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const nivel = urlParams.get("nivel");
+
+  if (nivel) {
+    // Oculta todos los platillos
+    document.querySelectorAll(".platillo").forEach(p => p.style.display = "none");
+
+    // Muestra solo el del nivel elegido
+    const seleccionado = document.querySelector(`.platillo.${nivel}`);
+    if (seleccionado) seleccionado.style.display = "block";
+  }
+});
+//
+
+// Funcionalidad para el carrusel personalizado
+document.addEventListener('DOMContentLoaded', function() {
+  const carruselContainer = document.querySelector('.carrusel-container');
+  const slides = document.querySelectorAll('.carrusel-slide');
+  const prevBtn = document.querySelector('.carrusel-prev');
+  const nextBtn = document.querySelector('.carrusel-next');
+  
+  let currentSlide = 0;
+  const totalSlides = slides.length; // Ahora son 4 slides
+  
+  // Función para mostrar un slide específico
+  function showSlide(index) {
+    // Ocultar todos los slides
+    slides.forEach(slide => {
+      slide.classList.remove('active');
+    });
+    
+    // Mostrar el slide actual
+    slides[index].classList.add('active');
+    
+    currentSlide = index;
+  }
+  
+  // Event listeners para las flechas
+  prevBtn.addEventListener('click', function() {
+    let newIndex = currentSlide - 1;
+    if (newIndex < 0) {
+      newIndex = totalSlides - 1; // Ir al último slide
+    }
+    showSlide(newIndex);
+  });
+  
+  nextBtn.addEventListener('click', function() {
+    let newIndex = currentSlide + 1;
+    if (newIndex >= totalSlides) {
+      newIndex = 0; // Volver al primer slide
+    }
+    showSlide(newIndex);
+  });
+  
+  // Iniciar con el primer slide
+  showSlide(0);
+});
+  </script>

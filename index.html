@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pa' Sazonar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="estilos.css">
+<script src="funciones.js" defer></script>
+
+</head>
+<body>
+
+
+  <!-- ========== SECCIÓN PRINCIPAL CON FONDO CREMA ========== -->
+  <div class="fondo-crema">
+    <!-- HEADER CON LOGO Y CUARTO DE CÍRCULO -->
+    <header>
+      <div class="quarter-circle">
+        <div class="logo-wrapper">
+          <img src="img/logo.png" alt="Logo" class="logo">
+          
+          <!-- ÍCONOS DE NAVEGACIÓN -->
+          <div class="circle-icon user-icon" onclick="location.href='#login'">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="circle-icon home-icon" onclick="location.href='index.html'">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="circle-icon search-icon" onclick="location.href='#tutorial-section'">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="circle-icon saved-icon">
+            <i class="fas fa-bookmark"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECCIÓN HERO CON LOGIN Y CONTENIDO PRINCIPAL -->
+    <section class="hero">
+      <div class="hero-flex">
+        <!-- CONTENIDO PRINCIPAL HERO -->
+        <div class="hero-content">
+          <img src="img/TITULO.png" alt="Pa' Sazonar" class="titulo-opaco">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quos veritatis iusto temporibus laboriosam voluptas eligendi amet fugit nemo? 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, quos. Accusantium ea, incidunt veniam recusandae odio animi suscipit atque ducimus necessitatibus! Itaque recusandae in doloribus
+            veritatis, laborum aperiam facilis consectetur.Iusto, sit quod reiciendis facilis est necessitatibus error fuga porro quae!
+            Donec in sapien ut neque dignissim posuere. 
+            Curabitur non lectus id elit finibus luctus vel sit amet massa.
+          </p>
+          <button class="btn-proyecto" onclick="location.href='produccion.html'">VER PROYECTO</button>
+        </div>
+      </div>
+
+      <!-- FLECHA DE DESPLAZAMIENTO -->
+      <div class="flecha-desplazamiento" onclick="scrollToNextSection()"></div>
+    </section>
+  </div>
+
+  <!-- ========== SECCIÓN DE NIVELES DE DIFICULTAD ========== -->
+  <div class="niveles">
+    <section class="profiles">
+      <div class="profile" data-img="chocolate" onclick="location.href='recetas.html?nivel=facil'">
+        <span class="nivel facil">FÁCIL</span>
+        <img src="img/facil.png" class="extra-image" alt="Imagen extra fácil">
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab beatae minus autem ratione numquam inventore molestias placeat asperiores magni, reiciendis possimus laudantium nulla atque eveniet. Commodi rerum magnam qui?</div>
+      </div>
+      <div class="profile" data-img="arroz"  onclick="location.href='recetas.html?nivel=medio'">
+        <span class="nivel medio">MEDIO</span>
+        <img src="img/medio.png" class="extra-image" alt="Imagen extra medio">
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum magnam tempore fugiat illum sunt, voluptates at culpa eum soluta aliquam suscipit esse debitis eius, a, voluptate aliquid nobis numquam atque.</div>
+      </div>
+      <div class="profile" data-img="alitas" onclick="location.href='recetas.html?nivel=dificil'">
+        <span class="nivel dificil">DIFÍCIL</span>
+        <img src="img/dificil.png" class="extra-image" alt="Imagen extra difícil">
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla modi, impedit exercitationem quidem deserunt nihil. Error, delectus? Reprehenderit nostrum numquam maiores, assumenda id aperiam maxime, soluta, temporibus aut nulla molestiae..</div>
+      </div>
+    </section>
+  </div>
+
+ <!-- ========== SECCIÓN DEL EQUIPO ========== -->
+  <section class="equipo">
+    <div class="equipo-header">
+      <h2 class="titulo-equipo">Nuestro Equipo</h2>
+      <p class="descripcion">
+        Loresicing elit. Culpa illo suscipit ut, architecto quod provident, dolores voluptatem totam consequuntur molestias illum enim 
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus placeat illum ea animi magni, harum rem numquam eveniet repellendus quisquam odit fugiat exercitationem
+        Tellus ultricies arcu mauris sollicitudin tellus dolor eu. 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Viverra porta consequat egestas arcu elit lacus sed mi ullamcorper.
+      </p>
+    </div>
+
+    <div class="equipo-container">
+      <div class="circulo-rojo">
+        <!-- CONTENEDOR DE MIEMBROS DEL EQUIPO -->
+        <div class="team-container">
+          <div class="circle-container" id="circle-container">
+            <div class="team-member" data-index="0">
+              <img src="img/facil.png" alt="Chelssie Suárez">
+              <span class="member-name">Chelssie Suárez</span>
+            </div>
+            <div class="team-member" data-index="1">
+              <img src="img/dificil.png" alt="David Rodríguez">
+              <span class="member-name">David Rodríguez</span>
+            </div>
+            <div class="team-member" data-index="2">
+              <img src="img/medio.png" alt="Catalina Casallas">
+              <span class="member-name">Catalina Casallas</span>
+            </div>
+            <div class="team-member" data-index="3">
+              <img src="img/facil.png" alt="Christian Rodríguez">
+              <span class="member-name">Christian Rodríguez</span>
+            </div>
+            <div class="team-member" data-index="4">
+              <img src="img/medio.png" alt="Natalia Palacios">
+              <span class="member-name">Natalia Palacios</span>
+            </div>
+            <div class="team-member" data-index="5">
+              <img src="img/dificil.png" alt="Sergio Parrado">
+              <span class="member-name">Sergio Parrado</span>
+            </div>
+            <div class="team-member" data-index="6">
+              <img src="img/facil.png" alt="Juan Valdes">
+              <span class="member-name">Juan Valdes</span>
+            </div>
+            <div class="team-member" data-index="7">
+              <img src="img/medio.png" alt="Stiven Morera">
+              <span class="member-name">Stiven Morera</span>
+            </div>
+            <div class="team-member" data-index="8">
+              <img src="img/dificil.png" alt="Alejandro Urdaneta">
+              <span class="member-name">Alejandro Urdaneta</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn-cargo" id="btn-cargo">Cargo</button>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== RECTÁNGULO CON LOGO Y REDES SOCIALES ===== -->
+<div class="rectangle">
+  <img src="img/logotipo.png" alt="Nuevo Logo" class="logo-rectangle">
+  <div class="social-icons">
+    <a href="https://www.instagram.com/pa.sazonar/?igsh=MXZxemlqYnIzaHFhbA%3D%3D" target="_blank" class="social-link">
+      <i class="fab fa-instagram social-icon"></i>
+    </a>
+    <a href="https://www.tiktok.com/@pa.sazonar?_t=ZS-8zl9Lb9vQBO&_r=1" target="_blank" class="social-link">
+      <i class="fab fa-tiktok social-icon"></i>
+    </a>
+  </div>
+</div>
+
+    <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Pa' sazonar© 2024. Todos los derechos reservados - Política de privacidad</p>
+  </footer>
+
+</body>
+</html>
