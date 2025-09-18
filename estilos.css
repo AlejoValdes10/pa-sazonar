@@ -794,7 +794,8 @@ footer {
     height: auto;
   }
   .profile {
-    height: 33.33vh;
+    height: auto;
+    min-height: 300px;
   }
   .nivel {
     padding: 5px 15px;
@@ -823,12 +824,12 @@ footer {
     font-size: 1rem;
   }
   .descripcion {
-    margin: 150px auto 30px;
+    margin: 40px auto 30px; /* mucho más corto */
     padding: 10px 20px;
     font-size: 0.8rem;
   }
   .equipo-container {
-    padding-bottom: 650px;
+    padding-bottom: 300px; /* menos espacio debajo */
   }
   .circulo-rojo {
     height: 150px;
@@ -836,9 +837,9 @@ footer {
     border-radius: 400px 400px 0 0;
   }
   .team-container {
-    width: 90%;
-    max-width: 400px;
-    height: 200px;
+    
+    bottom: 30px; /* más cerca del círculo rojo */
+    height: 180px; /* menos alto para que se acomoden */
   }
   .team-member {
     width: 60px;
@@ -1511,7 +1512,7 @@ footer {
     width: 200px;
     height: 160px;
     left: -4vh;
-    top: -5vh;
+    top: -2vh;
   }
   
   .bola-amarilla-recetas .logo-recetas {
@@ -1529,13 +1530,13 @@ footer {
   }
   
   .circle-icon-recetas.home-icon {
-    top: 100px;
-    right: 20px;
+    top: 50px;
+    right: 15px;
   }
   
   .titulo-recetas {
     font-size: 2rem; /* MÁS REDUCIDO */
-    margin: 0 0 15px 0; /* MÁRGENES CORREGIDOS */
+    margin-top: 100px;
   }
   
   .carrusel-wrapper {

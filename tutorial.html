@@ -117,7 +117,30 @@ document.addEventListener("DOMContentLoaded", function() {
     loadPlatillo(platillo);
     loadIngredientes(platillo);
     loadPasos(platillo);
+     const selector = document.getElementById("selector-platillo");
+    if (selector) selector.value = platillo;
   }
 });
 //
+
+// Función para cambiar de platillo desde el selector
+function cambiarPlatillo() {
+  const selector = document.getElementById("selector-platillo");
+  const platillo = selector.value;
+
+  // Redirige al mismo tutorial.html pero con el platillo seleccionado en la URL
+  window.location.href = `tutorial.html?platillo=${platillo}`;
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const platillo = urlParams.get("platillo");
+
+  if (platillo && platillos[platillo]) {
+    loadPlatillo(platillo);
+    loadIngredientes(platillo);
+    loadPasos(platillo);
+  }
+});
+
+
 </script>
