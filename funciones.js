@@ -1,4 +1,19 @@
 // ==========================
+// FLECHA DE DESPLAZAMIENTO
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const flecha = document.querySelector(".flecha-desplazamiento");
+  if (flecha) {
+    flecha.addEventListener("click", () => {
+      const niveles = document.querySelector(".niveles");
+      if (niveles) {
+        niveles.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
+
+// ==========================
 // DATOS DE PLATILLOS
 // ==========================
 const platillos = {
