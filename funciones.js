@@ -165,8 +165,44 @@ const centerY = container.offsetHeight / 2 + 250; // Aumentado de +60 a +80 (má
 
       selectedTeamMember = index;
     }
+// ==========================
+// AJUSTES PARA MÓVILES - CÍRCULOS DEL EQUIPO
+// ==========================
+function adjustTeamLayoutForMobile() {
+  if (window.innerWidth <= 576) {
+    const members = document.querySelectorAll('.team-member');
+    const container = document.querySelector('.circle-container');
+    
+    // Solo aplicar si estamos en móvil
+    members.forEach((member, index) => {
+      // Restablecer estilos de posición
+      member.style.position = 'absolute';
+      member.style.left = '50%';
+      member.style.top = '50%';
+      
+      // Aplicar transformaciones para forma de U
+      const positions = [
+        { x: -80, y: -20 },  // Posición 1
+        { x: -50, y: -35 },  // Posición 2
+        { x: -20, y: -40 },  // Posición 3
+        { x: 10, y: -35 },   // Posición 4
+        { x: 40, y: -20 },   // Posición 5
+        { x: 40, y: 10 },    // Posición 6
+        { x: 10, y: 25 },    // Posición 7
+        { x: -20, y: 30 },   // Posición 8
+        { x: -50, y: 25 }    // Posición 9
+      ];
+      
+      if (index < positions.length && !member.classList.contains('selected')) {
+        member.style.transform = `translate(${positions[index].x}px, ${positions[index].y}px) scale(1)`;
+      }
+    });
+  }
+}
 
-
+// Ejecutar al cargar y al redimensionar
+window.addEventListener('load', adjustTeamLayoutForMobile);
+window.addEventListener('resize', adjustTeamLayoutForMobile);
     
 
 // ==========================
