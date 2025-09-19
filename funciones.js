@@ -1,6 +1,6 @@
-// ==========================
-// FLECHA DE DESPLAZAMIENTO
-// ==========================
+// ===============================
+// FLECHA DE DESPLAZAMIENTO INICIO
+// ================================
 document.addEventListener("DOMContentLoaded", () => {
   const flecha = document.querySelector(".flecha-desplazamiento");
   if (flecha) {
@@ -12,6 +12,162 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ==========================
+// VARIABLES GLOBALES
+// ==========================
+let currentPlatillo = "chocolate";
+let currentIngrediente = 0;
+
+    // ==========================
+    // DATOS DEL EQUIPO
+    // ==========================
+    const equipoData = [
+      { 
+        nombre: "Chelssie Suárez", 
+        cargo: "Líder audiovisual",
+        desc: "Responsable de dirigir y supervisar todos los proyectos audiovisuales, asegurando la más alta calidad en producción."
+      },
+      { 
+        nombre: "David Rodríguez", 
+        cargo: "Web master",
+        desc: "Encargado del desarrollo, mantenimiento y optimización de todos los sitios web y aplicaciones digitales."
+      },
+      { 
+        nombre: "Catalina Casallas", 
+        cargo: "Marketing",
+        desc: "Desarrolla estrategias de marketing efectivas para posicionar nuestra marca y llegar a más clientes."
+      },
+      { 
+        nombre: "Christian Rodríguez", 
+        cargo: "Animador y diseñador gráfico",
+        desc: "Crea animaciones impactantes y diseños visuales que comunican efectivamente nuestros mensajes."
+      },
+      { 
+        nombre: "Natalia Palacios", 
+        cargo: "Diseñadora e ilustradora",
+        desc: "Diseña ilustraciones únicas y elementos visuales que dan vida a nuestras campañas y productos."
+      },
+      { 
+        nombre: "Sergio Parrado", 
+        cargo: "Productor audiovisual",
+        desc: "Coordina y produce contenido audiovisual de alta calidad, desde la preproducción hasta la postproducción."
+      },
+      { 
+        nombre: "Juan Valdes", 
+        cargo: "Diseñador gráfico de marketing",
+        desc: "Crea materiales gráficos atractivos y efectivos para campañas de marketing y comunicación."
+      },
+      { 
+        nombre: "Stiven Morera", 
+        cargo: "Diseñador gráfico general",
+        desc: "Desarrolla identidades visuales y elementos gráficos para diversos proyectos y plataformas."
+      },
+      { 
+        nombre: "Alejandro Urdaneta", 
+        cargo: "Diseñador gráfico y editorial",
+        desc: "Especialista en diseño editorial, creando publicaciones impresas y digitales con el más alto estándar."
+      }
+    ];
+
+    // ==========================
+    // VARIABLES GLOBALES
+    // ==========================
+    let selectedTeamMember = 0;
+
+    // ==========================
+    // INICIALIZACIÓN DEL EQUIPO
+    // ==========================
+    document.addEventListener("DOMContentLoaded", function () {
+      initializeTeam();
+      window.addEventListener("resize", positionTeamMembers);
+    });
+
+    // ==========================
+    // FUNCIONES DE EQUIPO (CÍRCULOS PEQUEÑOS)
+    // ==========================
+    function initializeTeam() {
+      const members = document.querySelectorAll(".team-member");
+      if (!members.length) return;
+
+      positionTeamMembers();
+      selectMember(0);
+
+      members.forEach((member, index) => {
+        member.addEventListener("click", () => selectMember(index));
+      });
+    }
+
+    function positionTeamMembers() {
+      const members = document.querySelectorAll(".team-member");
+      const container = document.getElementById("circle-container");
+      if (!container) return;
+
+// Valores sugeridos para más separación y más abajo:
+const radiusX = 450; // Aumentado de 380 a 420 (más separación horizontal)
+const radiusY = 250; // Aumentado de 200 a 220 (más altura)
+      const centerX = container.offsetWidth / 2;
+const centerY = container.offsetHeight / 2 + 250; // Aumentado de +60 a +80 (más abajo)
+      const totalMembers = members.length;
+      
+      // Distribuir los miembros en forma de U invertida (de 0 a π radianes)
+      members.forEach((member, i) => {
+        // Calcular ángulo (de 0 a π radianes) - INVERTIDO para que la U mire hacia arriba
+        const angle = Math.PI * (i / (totalMembers - 1));
+        
+        // Calcular posición (invertir el seno para que la U mire hacia arriba)
+        const x = centerX + radiusX * Math.cos(angle);
+        const y = centerY - radiusY * Math.sin(angle); // Invertido con signo negativo
+        
+        // Posicionar el miembro
+        member.style.left = `${x - member.offsetWidth / 2}px`;
+        member.style.top = `${y - member.offsetHeight / 2}px`;
+        
+        // Restaurar transformación para miembros no seleccionados
+        if (!member.classList.contains("selected")) {
+          member.style.transform = "scale(1)";
+        }
+      });
+    }
+
+    function selectMember(index) {
+      const members = document.querySelectorAll(".team-member");
+      const btnCargo = document.getElementById("btn-cargo");
+      const cargoText = btnCargo.querySelector(".cargo-text");
+      const cargoDesc = btnCargo.querySelector(".cargo-desc");
+      const container = document.getElementById("circle-container");
+
+      // Quitar selección actual
+      members.forEach(m => m.classList.remove("selected"));
+      
+      // Aplicar nueva selección
+      members[index].classList.add("selected");
+      
+      // Actualizar texto del botón
+      if (equipoData[index] && btnCargo) {
+        cargoText.textContent = equipoData[index].cargo;
+        cargoDesc.textContent = equipoData[index].desc;
+      }
+
+      // Reposicionar todos los miembros
+      positionTeamMembers();
+      
+      // Mover el miembro seleccionado al centro sobre el botón
+      const selected = members[index];
+      if (container && selected) {
+        const centerX = container.offsetWidth / 2 - selected.offsetWidth / 2;
+        const centerY = 15; // Posición sobre el botón
+        
+        selected.style.left = `${centerX}px`;
+        selected.style.top = `${centerY}px`;
+        selected.style.transform = "scale(1.2)";
+      }
+
+      selectedTeamMember = index;
+    }
+
+
+    
 
 // ==========================
 // DATOS DE PLATILLOS
@@ -72,28 +228,6 @@ const platillos = {
     ]
   }
 };
-
-// ==========================
-// DATOS DEL EQUIPO
-// ==========================
-const equipoData = [
-  { nombre: "Chelssie Suárez", cargo: "Líder audiovisual" },
-  { nombre: "David Rodríguez", cargo: "Web master" },
-  { nombre: "Catalina Casallas", cargo: "Marketing" },
-  { nombre: "Christian Rodríguez", cargo: "Animador y diseñador gráfico" },
-  { nombre: "Natalia Palacios", cargo: "Diseñadora e ilustradora" },
-  { nombre: "Sergio Parrado", cargo: "Productor audiovisual" },
-  { nombre: "Juan Valdes", cargo: "Diseñador gráfico de marketing" },
-  { nombre: "Stiven Morera", cargo: "Diseñador gráfico general" },
-  { nombre: "Alejandro Urdaneta", cargo: "Diseñador gráfico y editorial" }
-];
-
-// ==========================
-// VARIABLES GLOBALES
-// ==========================
-let currentPlatillo = "chocolate";
-let currentIngrediente = 0;
-let selectedTeamMember = 0;
 
 // ==========================
 // INICIALIZACIÓN
@@ -185,63 +319,6 @@ function loadPasos(tipo) {
       <div class="texto-paso"><p>${paso.texto}</p></div>` : ""}`;
     container.appendChild(pasoDiv);
   });
-}
-
-// ==========================
-// FUNCIONES DE EQUIPO (CÍRCULOS PEQUEÑOS)
-// ==========================
-function initializeTeam() {
-  const members = document.querySelectorAll(".team-member");
-  if (!members.length) return;
-
-  positionTeamMembers();
-  selectMember(0);
-
-  members.forEach((member, index) => {
-    member.addEventListener("click", () => selectMember(index));
-  });
-}
-
-function positionTeamMembers() {
-  const members = document.querySelectorAll(".team-member");
-  const container = document.getElementById("circle-container");
-  if (!container) return;
-
-  const radius = 350;
-  const totalMembers = members.length;
-  const angleStep = Math.PI / (totalMembers - 1);
-
-  members.forEach((member, i) => {
-    const angle = i * angleStep - Math.PI / 1;
-    const x = Math.cos(angle) * radius + container.offsetWidth / 2;
-    const y = Math.sin(angle) * radius + container.offsetHeight / 2;
-
-    member.style.left = x - 50 + "px";
-    member.style.top = y - -200 + "px";
-  });
-}
-
-function selectMember(index) {
-  const members = document.querySelectorAll(".team-member");
-  const btnCargo = document.getElementById("btn-cargo");
-
-  members.forEach((m) => {
-    m.classList.remove("selected");
-    positionTeamMembers();
-  });
-
-  members[index].classList.add("selected");
-  if (equipoData[index] && btnCargo) btnCargo.textContent = equipoData[index].cargo;
-
-  const selected = members[index];
-  selected.style.width = "100px";
-  selected.style.height = "100px";
-  selected.style.left = "50%";
-  selected.style.top = "20px";
-  selected.style.transform = "translateX(-50%)";
-  selected.style.zIndex = "100";
-
-  selectedTeamMember = index;
 }
 
 // ==========================
