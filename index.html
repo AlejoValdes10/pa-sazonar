@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
   <!-- ========== SECCIÓN PRINCIPAL CON FONDO CREMA ========== -->
   <div class="fondo-crema">
     <!-- HEADER CON LOGO Y CUARTO DE CÍRCULO -->
@@ -91,54 +90,71 @@
       </p>
     </div>
 
+    <!-- Diseño original para desktop -->
     <div class="equipo-container">
       <div class="circulo-rojo">
         <!-- CONTENEDOR DE MIEMBROS DEL EQUIPO -->
         <div class="team-container">
           <div class="circle-container" id="circle-container">
-<!-- Los 9 miembros del equipo con imágenes -->
-<div class="team-member" data-index="0">
-  <img src="img/team/chelssie.jpg" alt="Chelssie Suárez" class="member-img">
-  <span class="member-name">Chelssie Suárez</span>
-</div>
-<div class="team-member" data-index="1">
-  <img src="img/team/david.jpg" alt="David Rodríguez" class="member-img">
-  <span class="member-name">David Rodríguez</span>
-</div>
-<div class="team-member" data-index="2">
-  <img src="img/team/catalina.jpg" alt="Catalina Casallas" class="member-img">
-  <span class="member-name">Catalina Casallas</span>
-</div>
-<div class="team-member" data-index="3">
-  <img src="img/team/christian.jpg" alt="Christian Rodríguez" class="member-img">
-  <span class="member-name">Christian Rodríguez</span>
-</div>
-<div class="team-member" data-index="4">
-  <img src="img/team/natalia.jpg" alt="Natalia Palacios" class="member-img">
-  <span class="member-name">Natalia Palacios</span>
-</div>
-<div class="team-member" data-index="5">
-  <img src="img/team/sergio.jpg" alt="Sergio Parrado" class="member-img">
-  <span class="member-name">Sergio Parrado</span>
-</div>
-<div class="team-member" data-index="6">
-  <img src="img/team/juan.jpg" alt="Juan Valdes" class="member-img">
-  <span class="member-name">Juan Valdes</span>
-</div>
-<div class="team-member" data-index="7">
-  <img src="img/team/stiven.jpg" alt="Stiven Morera" class="member-img">
-  <span class="member-name">Stiven Morera</span>
-</div>
-<div class="team-member" data-index="8">
-  <img src="img/team/alejandro.jpg" alt="Alejandro Urdaneta" class="member-img">
-  <span class="member-name">Alejandro Urdaneta</span>
-</div>
+            <!-- Los 9 miembros del equipo con imágenes -->
+            <div class="team-member" data-index="0">
+              <img src="img/team/chelssie.jpg" alt="Chelssie Suárez" class="member-img">
+              <span class="member-name">Chelssie Suárez</span>
+            </div>
+            <div class="team-member" data-index="1">
+              <img src="img/team/david.jpg" alt="David Rodríguez" class="member-img">
+              <span class="member-name">David Rodríguez</span>
+            </div>
+            <div class="team-member" data-index="2">
+              <img src="img/team/catalina.jpg" alt="Catalina Casallas" class="member-img">
+              <span class="member-name">Catalina Casallas</span>
+            </div>
+            <div class="team-member" data-index="3">
+              <img src="img/team/christian.jpg" alt="Christian Rodríguez" class="member-img">
+              <span class="member-name">Christian Rodríguez</span>
+            </div>
+            <div class="team-member" data-index="4">
+              <img src="img/team/natalia.jpg" alt="Natalia Palacios" class="member-img">
+              <span class="member-name">Natalia Palacios</span>
+            </div>
+            <div class="team-member" data-index="5">
+              <img src="img/team/sergio.jpg" alt="Sergio Parrado" class="member-img">
+              <span class="member-name">Sergio Parrado</span>
+            </div>
+            <div class="team-member" data-index="6">
+              <img src="img/team/juan.jpg" alt="Juan Valdes" class="member-img">
+              <span class="member-name">Juan Valdes</span>
+            </div>
+            <div class="team-member" data-index="7">
+              <img src="img/team/stiven.jpg" alt="Stiven Morera" class="member-img">
+              <span class="member-name">Stiven Morera</span>
+            </div>
+            <div class="team-member" data-index="8">
+              <img src="img/team/alejandro.jpg" alt="Alejandro Urdaneta" class="member-img">
+              <span class="member-name">Alejandro Urdaneta</span>
+            </div>
           </div>
         </div>
         <button class="btn-cargo" id="btn-cargo">
           <span class="cargo-text">Cargo</span>
           <span class="cargo-desc">Descripción del cargo seleccionado</span>
         </button>
+      </div>
+    </div>
+
+    <!-- Carrusel para móviles -->
+    <div class="mobile-team-carousel">
+      <h3 class="carousel-title">Conoce a nuestro equipo</h3>
+      <div class="carousel-counter"><span id="current-slide">1</span>/9</div>
+      <div class="carousel-container">
+        <div class="carousel-track" id="carousel-track">
+          <!-- Slides generados por JavaScript -->
+        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      <div class="carousel-nav" id="carousel-dots">
+        <!-- Puntos de navegación generados por JavaScript -->
       </div>
     </div>
   </section>
