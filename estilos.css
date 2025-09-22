@@ -1355,24 +1355,21 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #000;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.5rem;
-  color: white;
   transition: all 0.3s ease;
   z-index: 100;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carrusel-btn:hover {
-  background: #5e6668;
   transform: translateY(-50%) scale(1.15);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
@@ -1797,8 +1794,8 @@ footer {
   }
     .carrusel-btn {
     z-index: 1000 !important; /* Asegurar que estén por encima de todo */
-    background: rgba(92, 91, 91, 0.9) !important; /* Fondo más sólido */
-    border: 2px solid #333 !important; /* Borde para mejor visibilidad */
+    background: rgba(255, 255, 255, 0.9) !important; /* Fondo más sólido */
+    border: 2px solid #000000 !important; /* Borde para mejor visibilidad */
   }
     .carrusel-prev {
     left: -30px !important; /* Alejar del borde */

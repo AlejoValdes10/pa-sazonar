@@ -427,6 +427,73 @@
         container.appendChild(pasoDiv);
       });
     }
+// ==========================
+// CARRUSEL DE INGREDIENTES MEJORADO (funciona en todos los dispositivos)
+// ==========================
+function initializeIngredientCarousel() {
+  const prevBtn = document.querySelector(".carrusel-prev-ingredientes");
+  const nextBtn = document.querySelector(".carrusel-next-ingredientes");
+  
+  // Verificar si los elementos existen
+  if (!prevBtn || !nextBtn) {
+    console.log("Botones del carrusel no encontrados");
+    return;
+  }
+  
+  console.log("Inicializando carrusel de ingredientes");
+
+  // Función para navegar al ingrediente anterior
+  prevBtn.addEventListener("click", function() {
+    const ingredientes = document.querySelectorAll(".ingrediente-item");
+    if (ingredientes.length === 0) return;
+    
+    ingredientes[currentIngrediente].classList.remove("active");
+    currentIngrediente = (currentIngrediente - 1 + ingredientes.length) % ingredientes.length;
+    ingredientes[currentIngrediente].classList.add("active");
+    
+    console.log("Navegando al ingrediente:", currentIngrediente + 1);
+  });
+
+  // Función para navegar al siguiente ingrediente
+  nextBtn.addEventListener("click", function() {
+    const ingredientes = document.querySelectorAll(".ingrediente-item");
+    if (ingredientes.length === 0) return;
+    
+    ingredientes[currentIngrediente].classList.remove("active");
+    currentIngrediente = (currentIngrediente + 1) % ingredientes.length;
+    ingredientes[currentIngrediente].classList.add("active");
+    
+    console.log("Navegando al ingrediente:", currentIngrediente + 1);
+  });
+
+  // También agregar eventos táctiles para móviles
+  prevBtn.addEventListener("touchend", function(e) {
+    e.preventDefault(); // Prevenir comportamiento por defecto
+    this.click(); // Disparar el evento click
+  });
+  
+  nextBtn.addEventListener("touchend", function(e) {
+    e.preventDefault(); // Prevenir comportamiento por defecto
+    this.click(); // Disparar el evento click
+  });
+}
+
+// Modificar initializeWebsite para usar la nueva función
+function initializeWebsite() {
+  loadPlatillo(currentPlatillo);
+  loadIngredientes(currentPlatillo);
+  loadPasos(currentPlatillo);
+  
+  // Inicializar carrusel de ingredientes para TODOS los dispositivos
+  initializeIngredientCarousel();
+  
+  // Solo inicializar equipo si estamos en desktop
+  if (window.innerWidth > 576) {
+    initializeTeam();
+    window.addEventListener("resize", positionTeamMembers);
+  }
+}
+
 
     // ==========================
     // CARRUSEL (Recetas)
